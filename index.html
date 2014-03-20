@@ -5,7 +5,7 @@
         <title>three.js webgl - STL</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-        <style>
+        <!--<style>
             body {
                 font-family: Monospace;
                 background-color: #000000;
@@ -25,16 +25,25 @@
             }
 
             a { color: skyblue }
-        </style>
+        </style>-->
     </head>
     <body>
+    	<script type="text/javascript">
+    	var loader = new THREE.STLLoader();
+    	loader.addEventListener( 'load', function ( event ) {
+     		var geometry = event.content;
+     		scene.add( new THREE.Mesh( geometry ) );
+     	} );
+     	loader.load( 'helicopter.stl' );
+    	</script>
+    <!--
         <div id="info">
             STL loader test
         </div>
 
         <script src="three.min.js"></script>
 
-        <script src="STLLoader.js"></script>
+        <script src=" STLLoader.js"></script>
 
         <script>
 
@@ -127,6 +136,6 @@
 
             }
 
-        </script>
+        </script>-->
     </body>
 </html>
