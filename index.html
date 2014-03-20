@@ -32,12 +32,14 @@
 
         <script src=" STLLoader.js"></script>
     	<script type="text/javascript">
+        function init() {
     	var loader = new THREE.STLLoader();
     	loader.addEventListener( 'load', function ( event ) {
      		var geometry = event.content;
      		scene.add( new THREE.Mesh( geometry ) );
      	} );
      	loader.load( 'helicopter.stl' );
+     }
     	</script>
     <!--
         <div id="info">
